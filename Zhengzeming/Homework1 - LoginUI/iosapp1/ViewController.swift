@@ -12,8 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var loginText: UITextField!
-    
+  
+    @IBOutlet weak var loginStatus: UILabel!
     @IBAction func findBackPassword(_ sender: Any) {
          alert(_title: "找回密码", _message: "您点击了找回密码")
     }
@@ -25,12 +25,13 @@ class ViewController: UIViewController {
     @IBAction func login(_ sender: Any) {
         if(userName.text=="zoom"&&password.text=="123456")
         {
-            loginText.text="Hello,zoom"
+            loginStatus.text="Hello,zoom"
+            
             alert(_title: "login success", _message: "Welcome!!!")
         }
         else
         {
-            loginText.text="wrong!!!"
+            loginStatus.text="wrong!!!"
             alert(_title: "login failed", _message: "login failed,please input the right userName and password")
         }
     }
